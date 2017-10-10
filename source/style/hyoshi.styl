@@ -1,0 +1,227 @@
+@import "../node_modules/ress/ress.css";
+@import "_variable";
+@import "_font";
+
+:root
+  font: $body-font
+  line-height: $body-line-height
+  color: #000000
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+  border-width: 0
+  font-weight: 700
+  line-height: $header-line-height
+
+@page
+  size: $page-width $page-height
+
+  // for publishing output
+  //bleed: $page-bleed
+  //marks: crop cross
+
+@page:right
+  margin: 18px
+
+  @top-right-corner
+    content: " "
+    margin-top: - $page-bleed
+    margin-right: - $page-bleed
+    padding-top: $page-bleed
+    padding-right: $page-bleed
+    background-color: $color-header-red
+  @right-middle
+    content: " "
+    margin-top: -1px
+    margin-right: - $page-bleed
+    margin-bottom: -1px
+    padding: 1px $page-bleed 1px 18px
+    background-color: $color-header-red
+  @bottom-right-corner
+    content: " "
+    margin-bottom: - $page-bleed
+    margin-right: - $page-bleed
+    padding-bottom: $page-bleed
+    padding-right: $page-bleed
+    background-color: $color-header-red
+
+@page:left
+  margin: 9px
+
+  @top-left-corner
+    content: " "
+    margin-top: - $page-bleed
+    margin-left: - $page-bleed
+    padding-top: $page-bleed
+    padding-left: $page-bleed
+    background-color: $color-header-red
+  @left-middle
+    content: " "
+    margin-top: -1px
+    margin-left: - $page-bleed
+    margin-bottom: -1px
+    padding: 1px 0 1px $page-bleed
+    background-color: $color-header-red
+  @bottom-left-corner
+    content: " "
+    margin-bottom: - $page-bleed
+    margin-left: - $page-bleed
+    padding-bottom: $page-bleed
+    padding-left: $page-bleed
+    background-color: $color-header-red
+
+.hyoshi-1
+  page-break-before: left
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+  .title
+    position: absolute
+    top: -20px
+    left: 202px
+    img
+      width: 540px
+
+  .title h1
+    display: inline-block
+    font-size: 44px
+    font-weight: 700
+    letter-spacing: -0.03rem
+    line-height: 52px
+    border: 6px solid #999999
+    padding: 6px 36px 6px 12px
+
+    .text-2
+      transform: translateX(24px) rotate(180deg)
+
+  .circle
+    position: absolute
+    top: 206px
+    right: 48px
+
+  .circle .logo svg
+    height: 28px
+    margin-right: 10px
+    fill: #656565
+
+  .circle .brand
+    position: relative
+    top: -1px
+
+  .circle .brand svg
+    height: 26px
+    fill: #656565
+
+  .content
+    position: absolute
+    top: 340px
+    left: 310px
+
+    [data-content="html5"]
+      position: relative
+      left: 0
+    [data-content="css_animation"]
+      position: relative
+      left: -20px
+    [data-content="npm"]
+      position: relative
+      left: -36px
+    [data-content="vue"]
+      position: relative
+      left: -12px
+    [data-content="react"]
+      position: relative
+      left: 6px
+    [data-content="font_awesome"]
+      position: relative
+      left: -10px
+    [data-content="docker"]
+      position: relative
+      left: -36px
+
+  .content h2
+    display: inline-block
+    font-size: 34px
+    font-weight: 600
+    letter-spacing: -0.03rem
+    margin-right: 6px
+    margin-bottom: 23px
+    color: $color-header-red
+
+  .content .author,
+  .illustration
+    font-size: 11px
+    color: #656565
+
+  .lead
+    position: absolute
+    bottom: 0
+    right: 6px
+    text-align: right
+    font-size: 58px
+    font-weight: 200
+    color: #656565
+    letter-spacing: -0.1rem
+    line-height: 70px
+
+  .cover
+    position: absolute
+    width: 0
+    height: 0
+    overflow: visible
+    top: 100px
+    left: -6px
+    img
+      width: 310px
+
+  .illustration
+    position: absolute
+    left: 15px
+    bottom: 9px
+
+.hyoshi-4
+  page-break-before: right
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+  .title
+    position: absolute
+    left: 230px
+    top: 430px
+
+  .title h1
+    display: inline-block
+    font-size: 30px
+    font-weight: 700
+    letter-spacing: -0.03rem
+    color: $color-header-red
+    border: 5px solid $color-header-red
+    padding: 6px 36px 6px 12px
+
+    .text-2
+      transform: translateX(24px) rotate(180deg)
+
+  .circle
+    position: absolute
+    bottom: 20px
+    left: 30px
+
+  .circle .logo svg
+    height: 28px
+    margin-right: 10px
+    fill: #656565
+
+  .circle .brand
+    position: relative
+    top: -1px
+
+  .circle .brand svg
+    height: 26px
+    fill: #656565

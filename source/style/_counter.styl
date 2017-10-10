@@ -1,0 +1,53 @@
+
+body
+  counter-reset: section subsection fig footnote
+
+a[data-ref="subsection"]
+a[data-ref="fig"]
+  text-decoration: none
+  color: inherit
+  margin: 0 .3em
+
+a[data-ref="subsection"]::before
+  content: target-counter(attr(href url), subsection) '章'
+
+a[data-ref="fig"]::before
+  content: '図' target-counter(attr(href url), fig)
+
+nav#toc
+  .introduction a::after,
+  .postscript a::after,
+  li.article > a::after
+    content: target-counter(attr(href url), page, decimal)
+    font: $nombre-font
+
+  li.chapter > a::before
+    content: target-counter(attr(href, url), section, upper-roman) '.'
+    width: 3rem
+
+  li.article a::before
+    content: target-counter(attr(href url), subsection) '.'
+    width: 2.8rem
+
+section.chapter
+  counter-increment: section
+
+  h1::before
+    content: counter(section, upper-roman) '. '
+
+  article
+    counter-increment: subsection
+
+    h2::before
+      content: counter(subsection) '. '
+
+figcaption
+  counter-increment: fig
+  &::before
+    content: '図' counter(fig) ': '
+
+span.footnote
+  counter-increment: footnote
+  &::footnote-call,
+  &::footnote-marker
+    content: '[' counter(footnote) '] '

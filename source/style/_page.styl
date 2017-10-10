@@ -1,0 +1,184 @@
+@media screen
+  body
+    margin: auto 0.8in
+    padding-bottom: 0.8in
+    max-width: 800px
+    font-size: 120%
+    line-height: 170%
+    // overflow-x: hidden
+
+  h1
+    margin: 8mm 0 2mm 0
+
+  section
+    clear: both
+
+  article, section, nav
+    margin-top: 5em
+
+@media print
+  :root
+    widows: 2
+    orphans: 2
+    hyphens: auto
+
+  // h1, h2, h3, h4, h5, h6
+  //   color: #000000
+
+  // table
+  //   border-color: #000000
+
+h1, h2, h3
+  break-after: avoid
+
+tr, th, td
+  break-inside: avoid
+
+pre
+  widows: 4
+  orphans: 4
+  box-decoration-break: slice
+
+
+section.chapter
+  page-break-before: right
+  page-break-after: always
+
+section.chapter > h1
+  page-break-after: always
+
+section.chapter > article
+  page-break-before: always
+  page-break-after: always
+
+.page-break
+  width: 0
+  height: 0
+  page-break-after: always
+
+@media print
+  section.chapter
+    h1, h2, h3
+      margin-right: - $side-column-width
+      clear: both
+
+  // section.chapter,
+  // nav#toc
+  //   h2
+  //     border-color: #000000
+
+  span.footnote
+    margin-right: $side-column-width + $page-margin-outer
+
+  aside.cssdef
+    width: 50%
+    float: block-end
+    float-reference: page
+    margin-right: -10000px
+    padding-right: 10000px + 20mm
+    margin-left: 1.5rem
+
+    .cssdef-region
+      margin-right: -10000px
+      padding-right: 10000px + 20mm
+
+    .title
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+    h3
+      font-size: 15px
+
+  figure
+    width: 50%
+    float: inline-end
+    float-reference: page
+    margin: 1.5rem 20mm 1.5rem 1.5rem
+    padding: 1rem 0
+    background-color: #ffffff
+
+    &.wide
+      width: 75%
+
+  #postscript,
+  #profile,
+  #colophon
+    margin-right: - $side-column-width
+
+  #colophon
+    margin-top: 10rem
+
+h1, h2
+  clear: both
+
+// article#html5, article#css_de_animation,
+// article#npm, article#vue, article#react,
+// article#docker
+//   page-break-before: always
+//   page-break-after: always
+
+// article.font_awesome
+//   page-break-before: always
+//   page-break-after: always
+//   float-reference: column
+//   float: block-start
+//   -ah-float: bottom multicol
+
+// section#introduction,
+// nav#toc,
+// section#postscript,
+// section#profile
+//   break-before: column
+
+// nav#toc
+//   page-break-after: always
+
+//   a:after
+//     content: target-counter(attr(href, url), page, decimal)
+//     font-size: 16px
+//     line-height: 16px
+
+// section#colophon
+//   float-reference: column
+//   float: block-end
+//   float: column-bottom
+//   -ah-float: bottom multicol
+
+@page
+  size: $page-width $page-height
+
+  @bottom-left
+    content: counter(page)
+    font: $nombre-font
+    margin-left: 8px
+    color: black
+
+  // for publishing output
+  // bleed: $page-bleed
+  // marks: crop cross
+
+@page :right
+  margin: $page-margin-top 0 $page-margin-bottom $page-margin-inner
+  padding-right: $side-column-width + $page-margin-outer
+
+  // @bottom-right
+  //   content: counter(page)
+  //   font: $nombre-font
+  //   color: black
+
+@page :left
+  margin: $page-margin-top 0 $page-margin-bottom $page-margin-outer
+  padding-right: $side-column-width + $page-margin-inner
+
+  // @bottom-left
+  //   content: counter(page)
+  //   font: $nombre-font
+  //   color: black
+
+@page :first
+  margin-top: $page-margin-top - 5mm
+  margin-bottom: 5mm
+
+  @bottom-left
+    content: ''

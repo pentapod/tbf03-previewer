@@ -1,0 +1,34 @@
+{
+  "name": "tbf03-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pentapod/C90-builder.git"
+  },
+  "author": "spring-raining",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pentapod/C90-builder/issues"
+  },
+  "homepage": "https://github.com/pentapod/C90-builder#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-stylus": "^2.6.0",
+    "marked": "^0.3.6",
+    "node-prismjs": "^0.1.1",
+    "pug": "^2.0.0-rc.4",
+    "ress": "^1.2.2"
+  }
+}

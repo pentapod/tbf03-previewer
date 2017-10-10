@@ -1,0 +1,337 @@
+@charset "UTF-8"
+
+@import "../node_modules/ress/ress.css"
+@import "_variable"
+@import "_font"
+
+:root
+  font: $body-font
+  line-height: $body-line-height
+  color: #000000
+  word-break: normal
+  line-break: strict
+  overflow-wrap: break-word
+  // letter-spacing: 0.05em
+  // font-feature-settings: 'palt', 'pwid'
+
+strong
+  font-weight: 800
+  margin: 0 .2rem
+  letter-spacing: .015rem
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+  border-width: 0
+  font-weight: 700
+  line-height: $header-line-height
+
+  // for pdf output
+  color: $color-header-red
+
+h1, h2, h3
+  font-feature-settings: 'palt', 'pwid'
+
+h1
+  //margin-bottom: 8mm
+  margin: 0
+  font-size: 28pt
+
+h2
+  margin: 12px 0 6px 0
+  font-size: 17pt
+
+h3
+  //margin-top: 5mm
+  //margin-bottom: 1mm
+  margin: 16px 0 8px 0
+  font-size: 14pt
+
+h4
+  //margin-top: 3mm
+  margin: 0 0 8px 0
+  font-size: 10pt
+
+p
+  margin: 0 0 8px 0
+  text-align: justify
+  text-indent: 1em
+
+hr
+  border: 0.5mm solid $color-bg-beige
+  margin: 8px 0
+
+a, a:hover, a:focus, a:visited
+  color: $color-link-blue
+  text-decoration: underline
+
+.clearfix:before
+  content: " "
+  display: table
+  clear: both
+
+code, kbd, pre, samp
+  font-feature-settings: normal
+  letter-spacing: 0
+  font-family: $code-font-family
+
+dt, dd
+  margin: 0
+  display: inline
+
+dd + dt::before
+  content: '\A'
+  white-space: pre
+
+figure
+  text-align: center
+  img
+    margin: ($image-margin / 2) 0
+  figcaption
+    margin: auto
+    width: 80%
+    // font-size: 90%
+
+img:not(.emoji)
+  display: block
+  max-width: 100%
+  margin: $image-margin auto
+  border-radius: 2px
+
+table
+  display: table
+  max-width: 100%
+  margin: $image-margin auto
+  border-color: $color-header-red
+  border-collapse: collapse
+  th:first-child
+    text-align: right
+  tr.header
+    th
+      text-align: center
+  th, td
+    padding: 1mm 1mm 1mm 0
+    &:first-child
+      padding-left: 1mm
+    background-color: transparent
+    border: 0
+    border-top: 0.5mm solid
+    border-bottom: 0.5mm solid
+
+code
+  padding: 0
+
+pre
+  position: relative
+  padding: .8em 0 .8em 1em
+  margin: .8em 0
+  border: 0
+  border-left: 3px solid
+  background-color: $color-bg-beige
+  font: $pre-font
+  line-height: $pre-line-height
+  white-space: pre-wrap
+  tab-size: 4
+  box-decoration-break: clone
+  word-break: break-all
+
+*:not(pre) > code
+  color: #000
+  font-weight: 600
+  margin: 0 0.2em
+  padding: 0.1em 0.5em
+  border: 0
+  border-radius: 0.2em
+  background-color: $color-bg-beige
+
+span.footnote
+  float: footnote
+  word-break: break-all
+
+nav#toc
+  ol
+    padding: 0
+  li
+    list-style-type: none
+    margin: .4rem 0
+  a
+    display: flex
+    font-size: 12px
+    font-feature-settings: 'palt'
+    text-decoration: none
+    color: inherit
+
+  .title
+    flex-grow: 1
+    small
+      display: block
+      font-size: 9px
+      line-height: 100%
+
+  li.chapter
+    margin: 2rem 0
+
+    & > a
+      display: inline-flex
+      color: #fff
+      font-family: $heading-font-family
+      font-size: 18px
+      font-weight: 600
+      line-height: 24px
+      background-color: $color-header-red
+      padding: 8px 8px 0 48px
+      margin-left: -48px
+
+    ol
+      margin-left: .5rem
+
+aside.cssdef
+  margin: 2rem 10px 2rem 0
+  background-color: #eeeeee
+  line-height: 1.5
+  border: 2px solid
+  box-shadow: 8px 8px 0 -2px #fff, 8px 8px 0 0px #000
+
+  .cssdef-region
+    position: relative
+    padding: 0 12px 12px 12px
+    display: flex
+    flex-direction: column
+
+    &:not(:first-child)
+      border-top: 2px solid
+
+  h3
+    display: inline-block
+    //font-family: $code-font-family
+    font-size: 18px
+    font-weight: 500
+    letter-spacing: .03rem
+    background-color: #000
+    color: #fff
+    margin: -2px .1rem 8px 0
+    padding: .4rem .7rem .4rem .7rem
+
+    &:first-child
+      padding-left: 18px
+      margin-left: -16px
+
+  p
+    text-indent: 0
+    line-break: loose
+
+  code
+    background-color: #fff
+    word-break: break-all
+
+  .desc
+    border-top: 2px solid
+    margin-top: 1rem
+    padding-top: .4rem
+
+  .desc p:last-child,
+  .desc dl:last-child
+    margin-bottom: 0
+
+  .value::before
+    content: '値: '
+    font-weight: 700
+  .style::before
+    content: 'スタイル: '
+    font-weight: 700
+  .initial::before
+    content: '初期値: '
+    font-weight: 700
+
+section.chapter,
+nav#toc
+  h1, h2
+    font-family: $heading-font-family
+
+  h1
+    display: inline-block
+    color: #fff
+    background-color: $color-header-red
+    background-image: url(assets/pattern.png)
+    background-repeat: repeat
+    background-size: 80px
+    background-position: right bottom
+    padding: 176px 70px 48px 10000px
+    margin-left: -10000px
+    font-weight: 600
+
+  h2
+    margin: 12px 0 12px 0
+    padding-right: 4px
+    display: inline-block
+    font-size: 24pt
+    line-height: 38px
+    border-bottom: 6px solid $color-header-red
+    text-shadow: 1px 1px #ffffff
+
+section#profile
+  .author
+    display: flex
+    margin: 8px 0
+    img
+      margin: 0 10px 8px 0
+
+  .author.inverse
+    flex-direction: row-reverse
+    img
+      margin: 0 0 8px 10px
+
+  img
+    width: 60px
+    height: 60px
+    border-radius: 30px
+
+  .profile
+    flex-grow: 1
+    h4
+      display: inline-block
+      margin-bottom: 4px
+
+section#colophon
+  font-weight: 400
+  position: relative
+
+  h2
+    border: 0
+
+  ul.editions
+    padding: 0
+    list-style: none
+    time
+      display: inline-block
+      width: 10em
+
+  .title
+    color: #000000
+
+  table.info
+    margin: 0
+    width: 100%
+    border-top: 2px solid #000000
+    border-bottom: 1px solid #000000
+    td
+      vertical-align: top
+      border: 0
+      padding-left: 0
+
+  .download-pass
+    position: absolute
+    right: 0
+    bottom: 0
+    padding: 0.1em 0.5em
+    font-weight: 700
+    color: #ffffff
+    background-color: #000000
+    border-radius: 0.2em
+
+    // for pdf output
+    display: none
+
+@import "_code"
+@import "_counter"
+@import '_page'
